@@ -2,6 +2,7 @@ import ExepenseItem from "./ExpenseItem";
 import Card from "./Card/Card";
 import "./Expense.css";
 import ExpenseList from "./ExpenseList";
+import ExpenseChart from './Charts/ExpenseChart';
 function Expense(expense) {
   const expenses = expense.expense;
   var updated_Expenses = expenses.filter((x) => {
@@ -10,6 +11,7 @@ function Expense(expense) {
 
   return (
     <Card className="expenses">
+      <ExpenseChart expenses = {updated_Expenses}></ExpenseChart>
       <ExpenseList items={updated_Expenses}></ExpenseList>
     </Card>
   );
